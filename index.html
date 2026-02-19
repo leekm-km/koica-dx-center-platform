@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="KOICA DX Center Platform - Philippines Digital Transformation ICT Training Program">
+    <meta name="keywords"
+        content="KOICA, Digital Transformation, AI Training, Data Analytics, Philippines, Dumaguete, Hannam University">
+    <title>KOICA DX Center Platform</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-logos">
+                <img src="assets/images/logos/koica-logo.svg" alt="KOICA" class="partner-logo">
+                <a href="index.html" class="logo">
+                    <div class="logo-text">
+                        <span class="logo-main">KOICA DX Center</span>
+                        <span class="logo-sub">Philippines</span>
+                    </div>
+                </a>
+                <img src="assets/images/logos/hannam-logo.png" alt="Hannam University" class="partner-logo">
+            </div>
+
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                    <li class="nav-item"><a href="programs.html" class="nav-link" data-i18n="nav.programs">Programs</a>
+                    </li>
+                    <li class="nav-item"><a href="lms.html" class="nav-link" data-i18n="nav.learning">Learning
+                            Resources</a></li>
+                    <li class="nav-item"><a href="talent-pool.html" class="nav-link" data-i18n="nav.talent">Talent
+                            Pool</a></li>
+                    <li class="nav-item"><a href="career.html" class="nav-link" data-i18n="nav.careers">Careers</a></li>
+                </ul>
+
+                <div class="nav-cta">
+                    <button class="btn btn-ghost btn-sm lang-toggle">EN</button>
+                    <a href="lms.html" class="btn btn-outline btn-sm nav-login-btn" data-i18n="nav.login">Login</a>
+                    <button class="btn btn-outline btn-sm nav-logout-btn" style="display: none;"
+                        onclick="authManager.logout()">Logout</button>
+                    <span class="nav-user-info"
+                        style="display: none; margin-left: 10px; color: var(--color-text);"></span>
+                </div>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+            <li class="nav-item"><a href="programs.html" class="nav-link" data-i18n="nav.programs">Programs</a></li>
+            <li class="nav-item"><a href="lms.html" class="nav-link" data-i18n="nav.learning">Learning Resources</a>
+            </li>
+            <li class="nav-item"><a href="talent-pool.html" class="nav-link" data-i18n="nav.talent">Talent Pool</a></li>
+            <li class="nav-item"><a href="career.html" class="nav-link" data-i18n="nav.careers">Careers</a></li>
+            <li class="nav-cta">
+                <button class="btn btn-ghost btn-full lang-toggle" style="margin-bottom: var(--space-2);">EN</button>
+                <a href="lms.html" class="btn btn-primary btn-full nav-login-btn" data-i18n="nav.login">Login</a>
+                <button class="btn btn-primary btn-full nav-logout-btn" style="display: none;"
+                    onclick="authManager.logout()" data-i18n="nav.logout">Logout</button>
+                <span class="nav-user-info" style="display: none; margin: 10px 0; color: var(--color-text);"></span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main style="margin-top: var(--header-height);">
+
+        <!-- Hero / Banner Section -->
+        <section class="hero">
+            <div class="hero-background"></div>
+            <div class="container">
+                <div class="hero-content animate-fade-in-up">
+                    <h1 class="hero-title" data-i18n="hero.title">KOICA<br>DX Center</h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">Philippines Digital Transformation Platform</p>
+                    <p class="hero-description">
+                        <span data-i18n="hero.description">Empowering Dumaguete youth with AI, Data Analytics, and
+                            Digital Skills</span><br>
+                        <span data-i18n="hero.description2">for Quality Employment in the BPO Industry</span>
+                    </p>
+                    <div class="hero-cta">
+                        <a href="programs.html" class="btn btn-primary btn-lg" data-i18n="hero.cta.programs">Explore
+                            Programs</a>
+                        <a href="talent-pool.html" class="btn btn-outline btn-lg" data-i18n="hero.cta.graduates">View
+                            Graduates</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Dashboard -->
+        <section class="section section-sm" style="background: var(--color-surface);">
+            <div class="container">
+                <div class="grid grid-cols-4">
+                    <div class="stat-card animate-fade-in-up stagger-1">
+                        <div class="stat-value" data-target="19">0</div>
+                        <div class="stat-label" data-i18n="stats.graduates">Total Graduates</div>
+                    </div>
+                    <div class="stat-card animate-fade-in-up stagger-2">
+                        <div class="stat-value" data-target="100">0</div>
+                        <div class="stat-label" data-i18n="stats.certification">Certification Rate (%)</div>
+                    </div>
+                    <div class="stat-card animate-fade-in-up stagger-3">
+                        <div class="stat-value" data-target="4">0</div>
+                        <div class="stat-label" data-i18n="stats.partners">Partner Companies</div>
+                    </div>
+                    <div class="stat-card animate-fade-in-up stagger-4">
+                        <div class="stat-value" data-target="85">0</div>
+                        <div class="stat-label" data-i18n="stats.employment">Employment Rate (%)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Introduction -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="animate-fade-in-up" data-i18n="about.title">About the Program</h2>
+                    <p class="text-secondary animate-fade-in-up stagger-1" data-i18n="about.subtitle">
+                        KOICA Digital Transformation Center building ICT capacity in Dumaguete, Philippines
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2" style="gap: var(--space-12); align-items: center;">
+                    <div class="animate-fade-in-up stagger-2">
+                        <h3 data-i18n="about.mission">Mission & Vision</h3>
+                        <p data-i18n-html="about.mission.text">
+                            The KOICA DX Center is committed to creating <strong>sustainable digital
+                                transformation</strong> in the Philippines by providing comprehensive ICT training
+                            to local youth and students.
+                        </p>
+                        <p data-i18n="about.sdg">
+                            Our program directly contributes to the UN Sustainable Development Goals:
+                        </p>
+                        <ul class="feature-list">
+                            <li>
+                                <span class="badge badge-primary">SDG 4</span>
+                                <strong data-i18n="about.sdg4">Quality Education</strong> - <span
+                                    data-i18n="about.sdg4.desc">World-class AI and data analytics curriculum</span>
+                            </li>
+                            <li>
+                                <span class="badge badge-secondary">SDG 8</span>
+                                <strong data-i18n="about.sdg8">Decent Work</strong> - <span
+                                    data-i18n="about.sdg8.desc">Direct employment linkage with BPO companies</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card card-glass animate-fade-in-up stagger-3">
+                        <div class="card-header">
+                            <h4 class="card-title" data-i18n="about.highlights">Key Highlights</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="feature-list">
+                                <li data-i18n="about.highlight1">✨ <strong>124-hour</strong> comprehensive training
+                                    program</li>
+                                <li data-i18n="about.highlight2">👨‍🏫 Expert instructors from <strong>Hannam
+                                        University</strong></li>
+                                <li>📜 <strong>TESDA NC II</strong> certification pathway</li>
+                                <li>🏢 Direct hiring by <strong>Inspiro, WrkPod</strong>, and partners</li>
+                                <li>💻 Fully equipped <strong>DX Center</strong> (BA 313 Lab)</li>
+                                <li data-i18n="about.highlight4">🌱 <strong>Sustainable</strong> - locally-trained
+                                    instructors</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tracks / Programs Overview -->
+        <section class="section" style="background: var(--color-surface);">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="animate-fade-in-up" data-i18n="tracks.title">Training Tracks</h2>
+                    <p class="text-secondary animate-fade-in-up stagger-1" data-i18n="tracks.subtitle">
+                        Three specialized programs designed for different learner profiles
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-3">
+                    <div class="card card-interactive animate-fade-in-up stagger-2">
+                        <div class="card-header">
+                            <div class="badge badge-primary mb-2" data-i18n="tracks.track1.badge">Track 1</div>
+                            <h3 class="card-title" data-i18n="tracks.track1.title">Foundation Program</h3>
+                            <p class="card-subtitle" data-i18n="tracks.track1.audience">For Local Youth</p>
+                        </div>
+                        <div class="card-body">
+                            <p><strong data-i18n="tracks.track1.duration">124 hours</strong> of intensive training</p>
+                            <ul class="feature-list" style="font-size: var(--text-sm);">
+                                <li>AI Fundamentals</li>
+                                <li>Database Modeling</li>
+                                <li>Data Analysis & Visualization</li>
+                                <li>Python Programming</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="programs.html#track1" class="btn btn-primary btn-sm"
+                                data-i18n="tracks.track1.cta">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-interactive animate-fade-in-up stagger-3">
+                        <div class="card-header">
+                            <div class="badge badge-secondary mb-2" data-i18n="tracks.track2.badge">Track 2</div>
+                            <h3 class="card-title" data-i18n="tracks.track2.title">Advanced Program</h3>
+                            <p class="card-subtitle" data-i18n="tracks.track2.audience">For University Students</p>
+                        </div>
+                        <div class="card-body">
+                            <p><strong data-i18n="tracks.track2.duration">120 hours</strong> of advanced topics</p>
+                            <ul class="feature-list" style="font-size: var(--text-sm);">
+                                <li>Machine Learning</li>
+                                <li>Deep Learning & Neural Networks</li>
+                                <li>Large Language Models (LLM)</li>
+                                <li>AI Application Development</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="programs.html#track2" class="btn btn-secondary btn-sm"
+                                data-i18n="tracks.track2.cta">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="card card-interactive animate-fade-in-up stagger-4">
+                        <div class="card-header">
+                            <div class="badge badge-success mb-2" data-i18n="tracks.track3.badge">Track 3</div>
+                            <h3 class="card-title" data-i18n="tracks.track3.title">Train the Trainer</h3>
+                            <p class="card-subtitle" data-i18n="tracks.track3.audience">For Local Faculty</p>
+                        </div>
+                        <div class="card-body">
+                            <p><strong data-i18n="tracks.track3.duration">30 hours</strong> pedagogical training</p>
+                            <ul class="feature-list" style="font-size: var(--text-sm);">
+                                <li>Teaching Methodologies</li>
+                                <li>Lab Instruction Techniques</li>
+                                <li>Curriculum Development</li>
+                                <li>Assessment Design</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="programs.html#track3" class="btn btn-success btn-sm"
+                                data-i18n="tracks.track3.cta">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="animate-fade-in-up" data-i18n="partners.title">Our Partners</h2>
+                    <p class="text-secondary animate-fade-in-up stagger-1" data-i18n="partners.subtitle">
+                        Collaborating with leading BPO companies in Dumaguete
+                    </p>
+                </div>
+
+                <div class="partners-grid">
+                    <div class="partner-card">Inspiro</div>
+                    <div class="partner-card">WrkPod</div>
+                    <div class="partner-card">Straive</div>
+                    <div class="partner-card">TaskUs</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2 class="animate-fade-in-up" data-i18n="cta.title">Build the Digital Future Together</h2>
+                <p class="text-secondary animate-fade-in-up stagger-1"
+                    style="font-size: var(--text-lg); margin-bottom: var(--space-8);" data-i18n="cta.desc">
+                    Next cohort enrollment opening soon. Register for notifications!
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="programs.html" class="btn btn-primary btn-lg" data-i18n="hero.cta.programs">Explore
+                        Programs</a>
+                    <a href="career.html" class="btn btn-outline btn-lg" data-i18n="nav.careers">Careers</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KOICA DX Center</h3>
+                    <p data-i18n="footer.mission">Integrated platform for education, talent management, and career
+                        development.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-i18n="footer.quicklinks">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="programs.html" data-i18n="nav.programs">Programs</a></li>
+                        <li><a href="lms.html" data-i18n="nav.learning">Learning Resources</a></li>
+                        <li><a href="talent-pool.html" data-i18n="nav.talent">Talent Pool</a></li>
+                        <li><a href="career.html" data-i18n="nav.careers">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-i18n="footer.contact">Contact</h3>
+                    <ul class="footer-links">
+                        <li data-i18n="footer.location">Silliman University</li>
+                        <li data-i18n="footer.address">BA 313, DX Center</li>
+                        <li data-i18n="footer.city">Dumaguete City, Philippines</li>
+                        <li><span data-i18n="footer.email">Email</span>: dxcenter@su.edu.ph</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-i18n="footer.partners">Partners</h3>
+                    <ul class="footer-links">
+                        <li data-i18n="footer.koica">KOICA Philippines</li>
+                        <li data-i18n="footer.hannam">Hannam University</li>
+                        <li data-i18n="footer.silliman">Silliman University</li>
+                        <li data-i18n="footer.tevec">TEVEC</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright" data-i18n="footer.copyright">
+                    © 2026 KOICA DX Center. All rights reserved.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Facebook">FB</a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">IN</a>
+                    <a href="#" class="social-link" aria-label="Twitter">TW</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/i18n.js"></script>
+    <script src="js/mock-data.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

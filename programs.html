@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KOICA DX Center Training Programs - AI, Data Analytics & Digital Transformation">
+    <title>Programs - KOICA DX Center Platform</title>
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-logos">
+                <img src="assets/images/logos/koica-logo.svg" alt="KOICA" class="partner-logo">
+                <a href="index.html" class="logo">
+                    <div class="logo-text">
+                        <span class="logo-main">KOICA DX Center</span>
+                        <span class="logo-sub">Philippines</span>
+                    </div>
+                </a>
+                <img src="assets/images/logos/hannam-logo.png" alt="Hannam University" class="partner-logo">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                    <li class="nav-item"><a href="programs.html" class="nav-link active"
+                            data-i18n="nav.programs">Programs</a></li>
+                    <li class="nav-item"><a href="lms.html" class="nav-link" data-i18n="nav.learning">Learning
+                            Resources</a></li>
+                    <li class="nav-item"><a href="talent-pool.html" class="nav-link" data-i18n="nav.talent">Talent
+                            Pool</a></li>
+                    <li class="nav-item"><a href="career.html" class="nav-link" data-i18n="nav.careers">Careers</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <button class="btn btn-ghost btn-sm lang-toggle">EN</button>
+                    <a href="lms.html" class="btn btn-outline btn-sm nav-login-btn" data-i18n="nav.login">Login</a>
+                    <button class="btn btn-outline btn-sm nav-logout-btn" style="display: none;"
+                        onclick="authManager.logout()">Logout</button>
+                    <span class="nav-user-info"
+                        style="display: none; margin-left: 10px; color: var(--color-text);"></span>
+                </div>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+            <li class="nav-item"><a href="programs.html" class="nav-link" data-i18n="nav.programs">Programs</a></li>
+            <li class="nav-item"><a href="lms.html" class="nav-link" data-i18n="nav.learning">Learning Resources</a>
+            </li>
+            <li class="nav-item"><a href="talent-pool.html" class="nav-link" data-i18n="nav.talent">Talent Pool</a></li>
+            <li class="nav-item"><a href="career.html" class="nav-link" data-i18n="nav.careers">Careers</a></li>
+            <li class="nav-cta">
+                <button class="btn btn-ghost btn-full lang-toggle" style="margin-bottom: var(--space-2);">EN</button>
+                <a href="lms.html" class="btn btn-primary btn-full nav-login-btn" data-i18n="nav.login">Login</a>
+                <button class="btn btn-primary btn-full nav-logout-btn" style="display: none;"
+                    onclick="authManager.logout()" data-i18n="nav.logout">Logout</button>
+                <span class="nav-user-info" style="display: none; margin: 10px 0; color: var(--color-text);"></span>
+            </li>
+        </ul>
+    </div>
+
+    <main style="margin-top: var(--header-height);">
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h1 data-i18n="programs.hero.title">Training Programs</h1>
+                    <p class="text-secondary" data-i18n="programs.hero.subtitle">Comprehensive AI and Data Analytics
+                        Training for Digital Innovation</p>
+                </div>
+
+                <!-- Track 1 -->
+                <div class="curriculum-section" id="track1">
+                    <div class="badge badge-primary">Track 1</div>
+                    <h2 data-i18n="programs.track1.title">Track 1: Foundation Program</h2>
+                    <div class="curriculum-content">
+                        <div class="grid grid-cols-2">
+                            <div>
+                                <h4 data-i18n="programs.track1.targetlabel">Target Audience</h4>
+                                <p data-i18n="programs.track1.target">Target: Local Youth (out-of-school)</p>
+                                <h4 style="margin-top: var(--space-6);" data-i18n="programs.track1.durationlabel">
+                                    Duration</h4>
+                                <p><strong data-i18n="programs.track1.hours">124 hours</strong> <span
+                                        data-i18n="programs.track1.trainingtext">of intensive training</span>
+                                </p>
+                            </div>
+                            <div>
+                                <h4 data-i18n="programs.track1.outcomeslabel">Learning Outcomes</h4>
+                                <ul class="feature-list">
+                                    <li data-i18n="programs.track1.outcome1">Understand AI fundamentals and applications
+                                    </li>
+                                    <li data-i18n="programs.track1.outcome2">Design and implement database models</li>
+                                    <li data-i18n="programs.track1.outcome3">Perform data analysis with Python and
+                                        Pandas</li>
+                                    <li data-i18n="programs.track1.outcome4">Create compelling data visualizations</li>
+                                    <li data-i18n="programs.track1.outcome5">Complete hands-on mini projects</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4 style="margin-top: var(--space-8);" data-i18n="programs.curriculum">Curriculum</h4>
+                        <div class="curriculum-topics">
+                            <div class="topic-item" data-i18n="programs.track1.module1">AI Fundamentals</div>
+                            <div class="topic-item" data-i18n="programs.track1.module4">Python Programming</div>
+                            <div class="topic-item" data-i18n="programs.track1.module2">Database Modeling</div>
+                            <div class="topic-item" data-i18n="programs.track1.module3">Data Analysis & Visualization
+                            </div>
+                            <div class="topic-item">Mini Project</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="curriculum-section" id="track2" style="margin-top: var(--space-12);">
+                    <div class="badge badge-secondary">Track 2</div>
+                    <h2 data-i18n="programs.track2.title">Track 2: Advanced Program</h2>
+                    <div class="curriculum-content">
+                        <div class="grid grid-cols-2">
+                            <div>
+                                <h4 data-i18n="programs.track1.targetlabel">Target Audience</h4>
+                                <p data-i18n="programs.track2.target">Target: University Students</p>
+                                <h4 style="margin-top: var(--space-6);" data-i18n="programs.track1.durationlabel">
+                                    Duration</h4>
+                                <p><strong data-i18n="programs.track2.hours">120 hours</strong> <span
+                                        data-i18n="programs.track2.trainingtext">of advanced topics</span></p>
+                            </div>
+                            <div>
+                                <h4 data-i18n="programs.track2.outcomeslabel">Learning Outcomes</h4>
+                                <ul class="feature-list">
+                                    <li data-i18n="programs.track2.outcome1">Implement machine learning algorithms</li>
+                                    <li data-i18n="programs.track2.outcome2">Build neural networks with TensorFlow</li>
+                                    <li data-i18n="programs.track2.outcome3">Work with Large Language Models (LLM)</li>
+                                    <li data-i18n="programs.track2.outcome4">Develop AI-powered applications</li>
+                                    <li data-i18n="programs.track2.outcome5">Complete capstone project</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4 style="margin-top: var(--space-8);" data-i18n="programs.curriculum">Curriculum</h4>
+                        <div class="curriculum-topics">
+                            <div class="topic-item">Advanced Python Programming</div>
+                            <div class="topic-item" data-i18n="programs.track2.module1">Machine Learning</div>
+                            <div class="topic-item" data-i18n="programs.track2.module2">Deep Learning & Neural Networks
+                            </div>
+                            <div class="topic-item" data-i18n="programs.track2.module3">Large Language Models (LLM)
+                            </div>
+                            <div class="topic-item" data-i18n="programs.track2.module4">AI Application Development</div>
+                            <div class="topic-item">Capstone Project</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="curriculum-section" id="track3" style="margin-top: var(--space-12);">
+                    <div class="badge badge-success">Track 3</div>
+                    <h2 data-i18n="programs.track3.title">Track 3: Train the Trainer</h2>
+                    <div class="curriculum-content">
+                        <div class="grid grid-cols-2">
+                            <div>
+                                <h4 data-i18n="programs.track1.targetlabel">Target Audience</h4>
+                                <p data-i18n="programs.track3.target">Target: Local Faculty</p>
+                                <h4 style="margin-top: var(--space-6);" data-i18n="programs.track1.durationlabel">
+                                    Duration</h4>
+                                <p><strong data-i18n="programs.track3.hours">30 hours</strong> <span
+                                        data-i18n="programs.track3.trainingtext">pedagogical training</span></p>
+                            </div>
+                            <div>
+                                <h4 data-i18n="programs.track3.outcomeslabel">Learning Outcomes</h4>
+                                <ul class="feature-list">
+                                    <li data-i18n="programs.track3.outcome1">Apply effective teaching methodologies</li>
+                                    <li data-i18n="programs.track3.outcome2">Conduct hands-on lab sessions</li>
+                                    <li data-i18n="programs.track3.outcome3">Develop course curricula</li>
+                                    <li data-i18n="programs.track3.outcome4">Design student assessments</li>
+                                    <li data-i18n="programs.track3.outcome5">Ensure program sustainability</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h4 style="margin-top: var(--space-8);" data-i18n="programs.curriculum">Curriculum</h4>
+                        <div class="curriculum-topics">
+                            <div class="topic-item" data-i18n="programs.track3.module1">Teaching Methodologies</div>
+                            <div class="topic-item" data-i18n="programs.track3.module2">Lab Instruction Techniques</div>
+                            <div class="topic-item" data-i18n="programs.track3.module3">Curriculum Development</div>
+                            <div class="topic-item" data-i18n="programs.track3.module4">Assessment Design</div>
+                            <div class="topic-item">Educational Technology</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Faculty -->
+                <div class="section" style="margin-top: var(--space-20);">
+                    <div class="section-header text-center">
+                        <h2 data-i18n="programs.faculty.title">Our Faculty</h2>
+                        <p class="text-secondary" data-i18n="programs.faculty.subtitle">Expert instructors from Korea
+                            and the Philippines</p>
+                    </div>
+                    <div class="faculty-grid" id="faculty-container"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KOICA DX Center</h3>
+                    <p data-i18n="footer.mission">Integrated platform for education, talent management, and career
+                        development.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.quicklinks">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="programs.html" data-i18n="nav.programs">Programs</a></li>
+                        <li><a href="lms.html" data-i18n="nav.learning">Learning Resources</a></li>
+                        <li><a href="talent-pool.html" data-i18n="nav.talent">Talent Pool</a></li>
+                        <li><a href="career.html" data-i18n="nav.careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.contact">Contact</h3>
+                    <ul class="footer-links">
+                        <li data-i18n="footer.location">Silliman University</li>
+                        <li data-i18n="footer.address">BA 313, DX Center</li>
+                        <li data-i18n="footer.city">Dumaguete City, Philippines</li>
+                        <li><span data-i18n="footer.email">Email</span>: dxcenter@su.edu.ph</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.partners">Partners</h3>
+                    <ul class="footer-links">
+                        <li data-i18n="footer.koica">KOICA Philippines</li>
+                        <li data-i18n="footer.hannam">Hannam University</li>
+                        <li data-i18n="footer.silliman">Silliman University</li>
+                        <li data-i18n="footer.tevec">TEVEC</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright" data-i18n="footer.copyright">© 2026 KOICA DX Center. All rights reserved.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Facebook">FB</a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">IN</a>
+                    <a href="#" class="social-link" aria-label="Twitter">TW</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/mock-data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script>
+        // Load faculty data
+        document.addEventListener('DOMContentLoaded', () => {
+            const facultyContainer = document.getElementById('faculty-container');
+            MOCK_DATA.FACULTY.forEach(faculty => {
+                const initials = faculty.name.split(' ').map(n => n[0]).join('');
+                facultyContainer.innerHTML += `
+                    <div class="faculty-card">
+                        <div class="faculty-avatar">${initials}</div>
+                        <div class="faculty-name">${faculty.name}</div>
+                        <div class="faculty-title">${faculty.title}</div>
+                        <div class="faculty-affiliation">${faculty.affiliation}</div>
+                        <p style="color: var(--color-text-secondary); font-size: var(--text-sm);">${faculty.bio}</p>
+                        <div class="faculty-expertise">
+                            ${faculty.expertise.map(skill => `<span class="tag tag-skill">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+        });
+    </script>
+</body>
+
+</html>

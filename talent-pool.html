@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="KOICA DX Center Talent Pool - Connect with certified AI & Data Analytics graduates">
+    <title>Talent Pool - KOICA DX Center Platform</title>
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ugc.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-logos">
+                <img src="assets/images/logos/koica-logo.svg" alt="KOICA" class="partner-logo">
+                <a href="index.html" class="logo">
+                    <div class="logo-text">
+                        <span class="logo-main">KOICA DX Center</span>
+                        <span class="logo-sub">Philippines</span>
+                    </div>
+                </a>
+                <img src="assets/images/logos/hannam-logo.png" alt="Hannam University" class="partner-logo">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                    <li class="nav-item"><a href="programs.html" class="nav-link" data-i18n="nav.programs">Programs</a>
+                    </li>
+                    <li class="nav-item"><a href="lms.html" class="nav-link" data-i18n="nav.learning">Learning
+                            Resources</a></li>
+                    <li class="nav-item"><a href="talent-pool.html" class="nav-link active"
+                            data-i18n="nav.talent">Talent Pool</a></li>
+                    <li class="nav-item"><a href="career.html" class="nav-link" data-i18n="nav.careers">Careers</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <button class="btn btn-ghost btn-sm lang-toggle">EN</button>
+                    <a href="lms.html" class="btn btn-outline btn-sm nav-login-btn" data-i18n="nav.login">Login</a>
+                    <button class="btn btn-outline btn-sm nav-logout-btn" style="display: none;"
+                        onclick="authManager.logout()">Logout</button>
+                    <span class="nav-user-info"
+                        style="display: none; margin-left: 10px; color: var(--color-text);"></span>
+                </div>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+            <li class="nav-item"><a href="programs.html" class="nav-link" data-i18n="nav.programs">Programs</a></li>
+            <li class="nav-item"><a href="lms.html" class="nav-link" data-i18n="nav.learning">Learning Resources</a>
+            </li>
+            <li class="nav-item"><a href="talent-pool.html" class="nav-link" data-i18n="nav.talent">Talent Pool</a></li>
+            <li class="nav-item"><a href="career.html" class="nav-link" data-i18n="nav.careers">Careers</a></li>
+            <li class="nav-cta">
+                <button class="btn btn-ghost btn-full lang-toggle" style="margin-bottom: var(--space-2);">EN</button>
+                <a href="lms.html" class="btn btn-primary btn-full nav-login-btn" data-i18n="nav.login">Login</a>
+                <button class="btn btn-primary btn-full nav-logout-btn" style="display: none;"
+                    onclick="authManager.logout()" data-i18n="nav.logout">Logout</button>
+                <span class="nav-user-info" style="display: none; margin: 10px 0; color: var(--color-text);"></span>
+            </li>
+        </ul>
+    </div>
+
+    <main style="margin-top: var(--header-height);">
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h1 data-i18n="talent.hero.title">Talent Pool</h1>
+                    <p class="text-secondary" data-i18n="talent.hero.subtitle">Connect with certified AI & Data
+                        Analytics graduates</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="filter-bar">
+                    <div class="filter-group">
+                        <button class="btn btn-sm btn-primary" data-filter="all"
+                            data-i18n="talent.filter.all">All</button>
+                        <button class="btn btn-sm btn-secondary" data-filter="track1"
+                            data-i18n="talent.filter.track1">Track 1</button>
+                        <button class="btn btn-sm btn-secondary" data-filter="track2"
+                            data-i18n="talent.filter.track2">Track 2</button>
+                    </div>
+                    <button id="add-portfolio-btn" class="btn btn-sm btn-primary">➕ Add Your Portfolio</button>
+                </div>
+
+                <!-- Graduates -->
+                <div class="trainee-grid" id="trainee-container"></div>
+
+                <!-- Projects Gallery -->
+                <div class="section" style="margin-top: var(--space-20);">
+                    <div class="section-header text-center">
+                        <h2 data-i18n="talent.projects.title">Project Gallery</h2>
+                        <p class="text-secondary" data-i18n="talent.projects.subtitle">Graduate project showcase</p>
+                    </div>
+                    <div class="project-grid" id="project-container"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Portfolio Modal -->
+    <div id="portfolio-modal" class="modal-container">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Add Your Portfolio</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="portfolio-form">
+                    <div class="form-group">
+                        <label class="form-label">Name *</label>
+                        <input type="text" name="name" class="form-input" required>
+                    </div>
+                    <div class="grid grid-cols-2">
+                        <div class="form-group">
+                            <label class="form-label">Track *</label>
+                            <select name="track" class="form-select" required>
+                                <option value="1">Track 1</option>
+                                <option value="2">Track 2</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Batch</label>
+                            <input type="text" name="batch" class="form-input" value="1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Major/Field *</label>
+                        <input type="text" name="major" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Skills (comma-separated) *</label>
+                        <input type="text" name="skills" class="form-input" placeholder="Python, SQL, Tableau" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Project Title</label>
+                        <input type="text" name="projectTitle" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Project Description</label>
+                        <textarea name="projectDescription" class="form-textarea"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">GitHub / Portfolio URL</label>
+                        <input type="url" name="githubUrl" class="form-input" placeholder="https://...">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary modal-close">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit Portfolio</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KOICA DX Center</h3>
+                    <p data-i18n="footer.mission">Integrated platform for education, talent management, and career
+                        development.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.quicklinks">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="programs.html" data-i18n="nav.programs">Programs</a></li>
+                        <li><a href="career.html" data-i18n="nav.careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.contact">Contact</h3>
+                    <ul class="footer-links">
+                        <li><span data-i18n="footer.email">Email</span>: dxcenter@su.edu.ph</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright" data-i18n="footer.copyright">© 2026 KOICA DX Center.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/mock-data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const traineeContainer = document.getElementById('trainee-container');
+            const projectContainer = document.getElementById('project-container');
+
+            // Load trainees
+            MOCK_DATA.TRAINEES.forEach(trainee => {
+                const initials = trainee.name.split(' ').map(n => n[0]).join('');
+                traineeContainer.innerHTML += `
+                    <div class="trainee-card" data-track="${trainee.track}">
+                        <div class="trainee-header">
+                            <div class="trainee-avatar">${initials}</div>
+                            <div class="trainee-info">
+                                <div class="trainee-name">${trainee.name}</div>
+                                <div class="trainee-meta">Batch ${trainee.batch} • Track ${trainee.track}</div>
+                                <div class="trainee-meta">${trainee.major}</div>
+                            </div>
+                        </div>
+                        <div class="trainee-skills">
+                            ${trainee.skills.map(skill => `<span class="tag tag-skill">${skill}</span>`).join('')}
+                        </div>
+                        <div class="trainee-certs">
+                            ${trainee.hasKOICACert ? '<span class="badge badge-primary">KOICA</span>' : ''}
+                            ${trainee.hasTESDA ? '<span class="badge badge-success">TESDA NC II</span>' : ''}
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Load projects
+            MOCK_DATA.PROJECTS.forEach(project => {
+                projectContainer.innerHTML += `
+                    <div class="project-card">
+                        <div class="project-thumbnail">📊</div>
+                        <div class="project-content">
+                            <div class="project-category">${project.category}</div>
+                            <h3 class="project-title">${project.title}</h3>
+                            <p class="project-description">${project.description}</p>
+                            <div class="project-skills">
+                                ${project.skills.map(skill => `<span class="tag">${skill}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Filter functionality
+            document.querySelectorAll('[data-filter]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('btn-primary'));
+                    e.target.classList.add('btn-primary');
+                    const filter = e.target.dataset.filter;
+                    document.querySelectorAll('.trainee-card').forEach(card => {
+                        if (filter === 'all' || card.dataset.track === filter.replace('track', '')) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ugc-talent.js"></script>
+</body>
+
+</html>

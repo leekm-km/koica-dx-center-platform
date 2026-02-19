@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="KOICA DX Center Learning Management System - Access course materials and resources">
+    <title>Learning Resources - KOICA DX Center Platform</title>
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-logos">
+                <img src="assets/images/logos/koica-logo.svg" alt="KOICA" class="partner-logo">
+                <a href="index.html" class="logo">
+                    <div class="logo-text">
+                        <span class="logo-main">KOICA DX Center</span>
+                        <span class="logo-sub">Philippines</span>
+                    </div>
+                </a>
+                <img src="assets/images/logos/hannam-logo.png" alt="Hannam University" class="partner-logo">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                    <li class="nav-item"><a href="programs.html" class="nav-link" data-i18n="nav.programs">Programs</a>
+                    </li>
+                    <li class="nav-item"><a href="lms.html" class="nav-link active" data-i18n="nav.learning">Learning
+                            Resources</a></li>
+                    <li class="nav-item"><a href="talent-pool.html" class="nav-link" data-i18n="nav.talent">Talent
+                            Pool</a></li>
+                    <li class="nav-item"><a href="career.html" class="nav-link" data-i18n="nav.careers">Careers</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <button class="btn btn-ghost btn-sm lang-toggle">EN</button>
+                    <a href="#" class="btn btn-outline btn-sm nav-login-btn" onclick="showLoginPrompt()"
+                        data-i18n="nav.login">Login</a>
+                    <button class="btn btn-outline btn-sm nav-logout-btn" style="display: none;"
+                        onclick="authManager.logout()">Logout</button>
+                    <span class="nav-user-info"
+                        style="display: none; margin-left: 10px; color: var(--color-text);"></span>
+                </div>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+            <li class="nav-item"><a href="programs.html" class="nav-link" data-i18n="nav.programs">Programs</a></li>
+            <li class="nav-item"><a href="lms.html" class="nav-link" data-i18n="nav.learning">Learning Resources</a>
+            </li>
+            <li class="nav-item"><a href="talent-pool.html" class="nav-link" data-i18n="nav.talent">Talent Pool</a></li>
+            <li class="nav-item"><a href="career.html" class="nav-link" data-i18n="nav.careers">Careers</a></li>
+            <li class="nav-cta">
+                <button class="btn btn-ghost btn-full lang-toggle" style="margin-bottom: var(--space-2);">EN</button>
+                <a href="#" class="btn btn-primary btn-full nav-login-btn" onclick="showLoginPrompt()"
+                    data-i18n="nav.login">Login</a>
+                <button class="btn btn-primary btn-full nav-logout-btn" style="display: none;"
+                    onclick="authManager.logout()" data-i18n="nav.logout">Logout</button>
+                <span class="nav-user-info" style="display: none; margin: 10px 0; color: var(--color-text);"></span>
+            </li>
+        </ul>
+    </div>
+
+    <main style="margin-top: var(--header-height);">
+        <section class="section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h1 data-i18n="lms.hero.title">Learning Resources</h1>
+                    <p class="text-secondary" data-i18n="lms.hero.subtitle">Access course materials and resources</p>
+                </div>
+
+                <div class="alert alert-warning" style="margin-bottom: var(--space-8);">
+                    <strong>🔒 Authentication Required:</strong> Please log in with your student credentials to access
+                    learning materials and download resources.
+                </div>
+
+                <!-- Login Form -->
+                <div class="card" style="max-width: 500px; margin: 0 auto var(--space-12);">
+                    <div class="card-header text-center">
+                        <h3 class="card-title" data-i18n="lms.login">Login</h3>
+                        <p class="card-subtitle">Access your personalized learning dashboard</p>
+                    </div>
+                    <div class="card-body">
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label class="form-label" data-i18n="lms.email">Email Address</label>
+                                <input type="email" name="email" class="form-input" placeholder="student@example.com"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" data-i18n="lms.password">Password</label>
+                                <input type="password" name="password" class="form-input" placeholder="••••••••"
+                                    required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full" data-i18n="lms.loginbtn">Sign
+                                In</button>
+                        </form>
+                    </div>
+                    <div class="card-footer" style="justify-content: center;">
+                        <p style="color: var(--color-text-secondary);">
+                            Don't have an account?
+                            <a href="register.html"
+                                style="color: var(--color-primary); text-decoration: none; font-weight: 600;">Register</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Resource Preview (Locked) -->
+                <div class="section-header text-center" style="margin-top: var(--space-20);">
+                    <h2 data-i18n="lms.resources">Available Resources</h2>
+                    <p class="text-secondary">Preview of materials available to enrolled students</p>
+                </div>
+
+                <div class="resource-grid" id="resource-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>KOICA DX Center</h3>
+                    <p data-i18n="footer.mission">Integrated platform for education, talent management, and career
+                        development.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.quicklinks">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="programs.html" data-i18n="nav.programs">Programs</a></li>
+                        <li><a href="talent-pool.html" data-i18n="nav.talent">Talent Pool</a></li>
+                        <li><a href="career.html" data-i18n="nav.careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.contact">Contact</h3>
+                    <ul class="footer-links">
+                        <li><span data-i18n="footer.email">Email</span>: dxcenter@su.edu.ph</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright" data-i18n="footer.copyright">© 2026 KOICA DX Center.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/mock-data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/navigation.js"></script>
+    <script>
+        function showLoginPrompt() {
+            showToast('Login functionality requires backend integration', 'info');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const resourceContainer = document.getElementById('resource-container');
+
+            // Icon mapping
+            const iconMap = { pdf: '📄', ppt: '📊', zip: '📦' };
+
+            // Load resources
+            MOCK_DATA.RESOURCES.forEach(resource => {
+                resourceContainer.innerHTML += `
+                    <div class="resource-card" onclick="showToast('Please log in to download', 'warning')">
+                        <div class="resource-icon">${iconMap[resource.type] || '📁'}</div>
+                        <h4 style="font-size: var(--text-lg); margin-bottom: var(--space-2);">${resource.title}</h4>
+                        <div class="badge badge-secondary" style="margin-bottom: var(--space-3);">${resource.category}</div>
+                        <p style="color: var(--color-text-secondary); font-size: var(--text-sm); margin-bottom: var(--space-4);">
+                            ${resource.description}
+                        </p>
+                        <div class="resource-meta">
+                            <span>👤 ${resource.author}</span>
+                            <span>📦 ${resource.fileSize}</span>
+                        </div>
+                    </div>
+                `;
+            });
+        });
+
+        // Login form handler
+        const loginForm = document.getElementById('loginForm');
+        if (loginForm) {
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(loginForm);
+                const email = formData.get('email');
+                const password = formData.get('password');
+
+                const submitBtn = loginForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Signing in...';
+                submitBtn.disabled = true;
+
+                try {
+                    await authManager.login(email, password);
+
+                    // Redirect to homepage or learning dashboard
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1000);
+                } catch (error) {
+                    console.error('Login error:', error);
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            });
+        }
+    </script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

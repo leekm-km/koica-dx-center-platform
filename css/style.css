@@ -1,0 +1,577 @@
+/**
+ * SKDP Platform - Page-specific Styles
+ * Custom styles for individual pages
+ */
+
+/* ==================== HERO SECTION ==================== */
+
+.hero {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-20) var(--space-4);
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(0, 102, 204, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 168, 232, 0.15) 0%, transparent 50%),
+        linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
+    z-index: -1;
+}
+
+.hero-background::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.2) 0%, transparent 70%);
+    top: -250px;
+    right: -250px;
+    animation: pulse 6s ease-in-out infinite;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: clamp(var(--text-4xl), 8vw, 4rem);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-4);
+    background: linear-gradient(135deg, #ffffff 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+    color: var(--color-secondary);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--space-6);
+    letter-spacing: 0.05em;
+}
+
+.hero-description {
+    font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--space-10);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+    .hero {
+        min-height: 500px;
+        padding: var(--space-12) var(--space-4);
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+    }
+}
+
+/* ==================== SECTION HEADERS ==================== */
+
+.section-header {
+    margin-bottom: var(--space-12);
+}
+
+.section-header h2 {
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+    margin-bottom: var(--space-3);
+}
+
+.section-header p {
+    font-size: var(--text-lg);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==================== FEATURE LISTS ==================== */
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-4) 0;
+}
+
+.feature-list li {
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--color-text-secondary);
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+/* ==================== PARTNERS GRID ==================== */
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+}
+
+.partner-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    min-height: 120px;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-surface), rgba(0, 102, 204, 0.1));
+}
+
+/* ==================== CTA SECTION ==================== */
+
+.cta-section {
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.1) 0%, rgba(0, 168, 232, 0.1) 100%);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-20) var(--space-4);
+    margin-top: var(--space-20);
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: clamp(var(--text-3xl), 5vw, var(--text-4xl));
+    margin-bottom: var(--space-4);
+}
+
+/* ==================== CURRICULUM TABS ==================== */
+
+.curriculum-section {
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    margin-top: var(--space-8);
+}
+
+.curriculum-content {
+    padding: var(--space-6) 0;
+}
+
+.curriculum-content h4 {
+    color: var(--color-primary);
+    margin-bottom: var(--space-3);
+}
+
+.curriculum-topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+}
+
+.topic-item {
+    background: var(--color-background);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-primary);
+    transition: all var(--transition-fast);
+}
+
+.topic-item:hover {
+    transform: translateX(5px);
+    border-left-color: var(--color-accent);
+}
+
+/* ==================== FACULTY SECTION ==================== */
+
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+}
+
+.faculty-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.faculty-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+}
+
+.faculty-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    margin: 0 auto var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: white;
+}
+
+.faculty-name {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-2);
+}
+
+.faculty-title {
+    color: var(--color-primary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-1);
+}
+
+.faculty-affiliation {
+    color: var(--color-text-tertiary);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+}
+
+.faculty-expertise {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: center;
+    margin-top: var(--space-4);
+}
+
+/* ==================== RESOURCES / LMS ==================== */
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-6);
+}
+
+.resource-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.resource-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.resource-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-bold);
+    color: white;
+    margin-bottom: var(--space-4);
+}
+
+.resource-meta {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+}
+
+/* ==================== TALENT POOL ==================== */
+
+.filter-bar {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-8);
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.trainee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-6);
+}
+
+.trainee-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.trainee-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+
+.trainee-header {
+    display: flex;
+    align-items: start;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.trainee-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-bold);
+    color: white;
+    flex-shrink: 0;
+}
+
+.trainee-info {
+    flex: 1;
+}
+
+.trainee-name {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-1);
+}
+
+.trainee-meta {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+}
+
+.trainee-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.trainee-certs {
+    display: flex;
+    gap: var(--space-2);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+}
+
+/* ==================== PROJECT GALLERY ==================== */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-6);
+}
+
+.project-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+}
+
+.project-thumbnail {
+    height: 200px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-4xl);
+    color: white;
+}
+
+.project-content {
+    padding: var(--space-6);
+}
+
+.project-category {
+    font-size: var(--text-xs);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-weight: var(--font-semibold);
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-2);
+}
+
+.project-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-3);
+}
+
+.project-description {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+}
+
+.project-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+/* ==================== JOB LISTINGS ==================== */
+
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: var(--space-6);
+}
+
+.job-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.job-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+
+.job-header {
+    margin-bottom: var(--space-4);
+}
+
+.job-company {
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-2);
+}
+
+.job-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-2);
+}
+
+.job-meta {
+    display: flex;
+    gap: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    flex-wrap: wrap;
+}
+
+.job-description {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: var(--space-4) 0;
+}
+
+.job-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: var(--space-4) 0;
+}
+
+.job-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-6);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+}
+
+.job-salary {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-success);
+}
+
+@media (max-width: 768px) {
+
+    .job-grid,
+    .project-grid,
+    .trainee-grid,
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
